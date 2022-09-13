@@ -12,6 +12,7 @@
     "gatsby": "^4.0.0",
     "gatsby-plugin-image": "^2.0.0",
     "gatsby-plugin-react-helmet": "^5.0.0",
+    "gatsby-plugin-react-svg": "^3.1.0",
     "gatsby-plugin-sharp": "^4.0.0",
     "gatsby-source-contentful": "^7.0.0",
     "gatsby-transformer-sharp": "^4.0.0",
@@ -42,7 +43,7 @@
     "url": "git+https://github.com/contentful/starter-gatsby-blog.git"
   },
   "scripts": {
-    "dev": "gatsby develop",
+    "dev": "ENABLE_GATSBY_REFRESH_ENDPOINT=true gatsby develop",
     "build": "gatsby build",
     "heroku-postbuild": "gatsby build",
     "serve": "gatsby serve",

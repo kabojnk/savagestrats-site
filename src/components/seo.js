@@ -2,17 +2,17 @@ import * as React from 'react'
 import { Helmet } from 'react-helmet'
 import { useStaticQuery, graphql } from 'gatsby'
 
-const Seo = ({ description = '', lang = 'en', meta = [], title, image }) => {
-  const { site } = useStaticQuery(
+const Seo = ({description = '', lang = 'en', meta = [], title, image}) => {
+  const {site} = useStaticQuery(
     graphql`
-      query {
-        site {
-          siteMetadata {
-            title
-            description
-          }
+        query {
+            site {
+                siteMetadata {
+                    title
+                    description
+                }
+            }
         }
-      }
     `
   )
 
@@ -69,7 +69,11 @@ const Seo = ({ description = '', lang = 'en', meta = [], title, image }) => {
           content: metaDescription,
         },
       ].concat(meta)}
-    />
+    >
+      <link rel="preconnect" href="https://fonts.googleapis.com"/>
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin/>
+      <link href="https://fonts.googleapis.com/css2?family=Domine:wght@400;700&family=Yanone+Kaffeesatz:wght@300;400;600;700&display=swap" rel="stylesheet"/>
+    </Helmet>
   )
 }
 
