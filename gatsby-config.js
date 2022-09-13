@@ -36,8 +36,8 @@ if (!spaceId || !accessToken) {
 
 module.exports = {
   siteMetadata: {
-    title: "Gatsby Contentful Starter",
-    description: "Official Contentful Gatsby Starter",
+    title: "Savage Strats Final Fantasy XIV Ultimate and Savage Guides",
+    description: "Savage Strats provides the best Final Fantasy XIV savage raid guides for the latest content available. We also specialize in BIS gearing, rotation optimizations, and other tools to make you a more performant FF14 player.",
   },
   plugins: [
     "gatsby-transformer-sharp",
@@ -48,5 +48,13 @@ module.exports = {
       resolve: "gatsby-source-contentful",
       options: contentfulConfig,
     },
+    {
+      resolve: "gatsby-plugin-react-svg",
+      options: {
+        rule: {
+          include: /assets/
+        }
+      }
+    }
   ],
 };
