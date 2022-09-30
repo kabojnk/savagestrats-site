@@ -1,11 +1,7 @@
 import React from 'react'
 
 import * as styles from './featured.module.css'
-import Container from './container'
 import { Link } from 'gatsby'
-import { StaticImage } from 'gatsby-plugin-image'
-import { renderRichText } from 'gatsby-source-contentful/rich-text'
-import Tags from './tags'
 
 const Featured = ({articles}) => {
 
@@ -45,11 +41,11 @@ const Featured = ({articles}) => {
                 {articles.map((article) => {
                   return (
                     <li key={article.slug}>
-                      <Link to={`/blog/${article.slug}`} className={styles.link}>
+                      <Link to={`/article/${article.slug}`} className={styles.link}>
                         <h2 className={styles.title}>{article.title}</h2>
                       </Link>
                       <div>
-                        {article.teaser?.raw && renderRichText(article.teaser)}
+                        {article.teaser?.childMarkdownRemark.excerpt && article.teaser?.childMarkdownRemark.excerpt}
                       </div>
                       <div className={styles.meta}>
                         <small className="meta">{article.date}</small>
