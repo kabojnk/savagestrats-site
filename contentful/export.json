@@ -312,7 +312,7 @@
         "id": "article",
         "type": "ContentType",
         "createdAt": "2022-08-26T07:48:32.933Z",
-        "updatedAt": "2022-08-26T07:48:33.205Z",
+        "updatedAt": "2022-09-29T11:49:40.309Z",
         "environment": {
           "sys": {
             "id": "master",
@@ -320,8 +320,8 @@
             "linkType": "Environment"
           }
         },
-        "publishedVersion": 1,
-        "publishedAt": "2022-08-26T07:48:33.205Z",
+        "publishedVersion": 11,
+        "publishedAt": "2022-09-29T11:49:40.309Z",
         "firstPublishedAt": "2022-08-26T07:48:33.205Z",
         "createdBy": {
           "sys": {
@@ -337,8 +337,8 @@
             "id": "5BCiTTzWTIeAoXs176f7wn"
           }
         },
-        "publishedCounter": 1,
-        "version": 2,
+        "publishedCounter": 6,
+        "version": 12,
         "publishedBy": {
           "sys": {
             "type": "Link",
@@ -386,54 +386,145 @@
           "linkType": "Asset"
         },
         {
-          "id": "teaser",
-          "name": "Teaser",
-          "type": "RichText",
+          "id": "featured",
+          "name": "Featured",
+          "type": "Boolean",
           "localized": false,
           "required": false,
           "validations": [
+          ],
+          "defaultValue": {
+            "en-US": false
+          },
+          "disabled": false,
+          "omitted": false
+        },
+        {
+          "id": "author",
+          "name": "Author",
+          "type": "Link",
+          "localized": false,
+          "required": false,
+          "validations": [
+          ],
+          "disabled": false,
+          "omitted": false,
+          "linkType": "Entry"
+        },
+        {
+          "id": "date",
+          "name": "Date",
+          "type": "Date",
+          "localized": false,
+          "required": false,
+          "validations": [
+          ],
+          "disabled": false,
+          "omitted": false
+        },
+        {
+          "id": "teaser",
+          "name": "Teaser",
+          "type": "Text",
+          "localized": false,
+          "required": false,
+          "validations": [
+          ],
+          "disabled": false,
+          "omitted": false
+        },
+        {
+          "id": "body",
+          "name": "Body",
+          "type": "Text",
+          "localized": false,
+          "required": false,
+          "validations": [
+          ],
+          "disabled": false,
+          "omitted": false
+        }
+      ]
+    },
+    {
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "04fyrp8m0ws9"
+          }
+        },
+        "id": "page",
+        "type": "ContentType",
+        "createdAt": "2022-09-07T08:09:22.191Z",
+        "updatedAt": "2022-09-07T08:09:22.380Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 1,
+        "publishedAt": "2022-09-07T08:09:22.380Z",
+        "firstPublishedAt": "2022-09-07T08:09:22.380Z",
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "5BCiTTzWTIeAoXs176f7wn"
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "5BCiTTzWTIeAoXs176f7wn"
+          }
+        },
+        "publishedCounter": 1,
+        "version": 2,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "5BCiTTzWTIeAoXs176f7wn"
+          }
+        }
+      },
+      "displayField": "title",
+      "name": "Page",
+      "description": "A Page",
+      "fields": [
+        {
+          "id": "title",
+          "name": "Title",
+          "type": "Symbol",
+          "localized": true,
+          "required": true,
+          "validations": [
             {
-              "enabledMarks": [
-                "bold",
-                "italic",
-                "underline",
-                "code"
-              ],
-              "message": "Only bold, italic, underline, and code marks are allowed"
-            },
-            {
-              "enabledNodeTypes": [
-                "heading-2",
-                "heading-3",
-                "heading-4",
-                "heading-5",
-                "heading-6",
-                "ordered-list",
-                "unordered-list",
-                "hr",
-                "blockquote",
-                "embedded-entry-block",
-                "embedded-asset-block",
-                "table",
-                "hyperlink",
-                "entry-hyperlink",
-                "asset-hyperlink",
-                "embedded-entry-inline",
-                "heading-1"
-              ],
-              "message": "Only heading 2, heading 3, heading 4, heading 5, heading 6, ordered list, unordered list, horizontal rule, quote, block entry, asset, table, link to Url, link to entry, link to asset, inline entry, and heading 1 nodes are allowed"
-            },
-            {
-              "nodes": {
-              }
+              "unique": true
             }
           ],
           "disabled": false,
           "omitted": false
         },
         {
-          "id": "content",
-          "name": "Content",
+          "id": "slug",
+          "name": "slug",
+          "type": "Symbol",
+          "localized": false,
+          "required": false,
+          "validations": [
+          ],
+          "disabled": false,
+          "omitted": false
+        },
+        {
+          "id": "body",
+          "name": "Body",
           "type": "RichText",
           "localized": false,
           "required": false,
@@ -473,43 +564,6 @@
               "nodes": {
               }
             }
-          ],
-          "disabled": false,
-          "omitted": false
-        },
-        {
-          "id": "featured",
-          "name": "Featured",
-          "type": "Boolean",
-          "localized": false,
-          "required": false,
-          "validations": [
-          ],
-          "defaultValue": {
-            "en-US": false
-          },
-          "disabled": false,
-          "omitted": false
-        },
-        {
-          "id": "author",
-          "name": "Author",
-          "type": "Link",
-          "localized": false,
-          "required": false,
-          "validations": [
-          ],
-          "disabled": false,
-          "omitted": false,
-          "linkType": "Entry"
-        },
-        {
-          "id": "date",
-          "name": "Date",
-          "type": "Date",
-          "localized": false,
-          "required": false,
-          "validations": [
           ],
           "disabled": false,
           "omitted": false
@@ -691,7 +745,7 @@
             "linkType": "Space"
           }
         },
-        "version": 2,
+        "version": 12,
         "createdAt": "2022-08-26T07:48:33.334Z",
         "createdBy": {
           "sys": {
@@ -700,7 +754,7 @@
             "linkType": "User"
           }
         },
-        "updatedAt": "2022-08-26T07:48:34.039Z",
+        "updatedAt": "2022-09-29T11:49:41.320Z",
         "updatedBy": {
           "sys": {
             "id": "5BCiTTzWTIeAoXs176f7wn",
@@ -743,16 +797,6 @@
           "widgetNamespace": "builtin"
         },
         {
-          "fieldId": "teaser",
-          "widgetId": "richTextEditor",
-          "widgetNamespace": "builtin"
-        },
-        {
-          "fieldId": "content",
-          "widgetId": "richTextEditor",
-          "widgetNamespace": "builtin"
-        },
-        {
           "fieldId": "featured",
           "widgetId": "boolean",
           "widgetNamespace": "builtin"
@@ -765,6 +809,77 @@
         {
           "fieldId": "date",
           "widgetId": "datePicker",
+          "widgetNamespace": "builtin"
+        },
+        {
+          "fieldId": "teaser",
+          "widgetId": "markdown",
+          "widgetNamespace": "builtin"
+        },
+        {
+          "fieldId": "body",
+          "widgetId": "markdown",
+          "widgetNamespace": "builtin"
+        }
+      ]
+    },
+    {
+      "sys": {
+        "id": "default",
+        "type": "EditorInterface",
+        "space": {
+          "sys": {
+            "id": "04fyrp8m0ws9",
+            "type": "Link",
+            "linkType": "Space"
+          }
+        },
+        "version": 2,
+        "createdAt": "2022-09-07T08:09:22.488Z",
+        "createdBy": {
+          "sys": {
+            "id": "5BCiTTzWTIeAoXs176f7wn",
+            "type": "Link",
+            "linkType": "User"
+          }
+        },
+        "updatedAt": "2022-09-07T08:09:22.915Z",
+        "updatedBy": {
+          "sys": {
+            "id": "5BCiTTzWTIeAoXs176f7wn",
+            "type": "Link",
+            "linkType": "User"
+          }
+        },
+        "contentType": {
+          "sys": {
+            "id": "page",
+            "type": "Link",
+            "linkType": "ContentType"
+          }
+        },
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        }
+      },
+      "controls": [
+        {
+          "fieldId": "title",
+          "widgetId": "singleLine",
+          "widgetNamespace": "builtin"
+        },
+        {
+          "fieldId": "slug",
+          "widgetId": "slugEditor",
+          "widgetNamespace": "builtin"
+        },
+        {
+          "fieldId": "body",
+          "widgetId": "richTextEditor",
           "widgetNamespace": "builtin"
         }
       ]
@@ -1033,7 +1148,7 @@
         "id": "3K9b0esdy0q0yGqgW2g6Ke",
         "type": "Entry",
         "createdAt": "2022-08-24T08:58:13.474Z",
-        "updatedAt": "2022-08-26T08:23:31.937Z",
+        "updatedAt": "2022-08-26T08:27:48.759Z",
         "environment": {
           "sys": {
             "id": "master",
@@ -1041,8 +1156,8 @@
             "linkType": "Environment"
           }
         },
-        "publishedVersion": 21,
-        "publishedAt": "2022-08-26T08:23:31.937Z",
+        "publishedVersion": 23,
+        "publishedAt": "2022-08-26T08:27:48.759Z",
         "firstPublishedAt": "2022-08-24T08:58:14.328Z",
         "createdBy": {
           "sys": {
@@ -1058,8 +1173,8 @@
             "id": "5BCiTTzWTIeAoXs176f7wn"
           }
         },
-        "publishedCounter": 11,
-        "version": 22,
+        "publishedCounter": 12,
+        "version": 24,
         "publishedBy": {
           "sys": {
             "type": "Link",
@@ -1077,7 +1192,7 @@
       },
       "fields": {
         "title": {
-          "en-US": "Hello world3"
+          "en-US": "Hello world4"
         },
         "slug": {
           "en-US": "hello-world"
@@ -1719,7 +1834,7 @@
         "id": "15jwOBqpxqSAOy2eOO4S0m",
         "type": "Entry",
         "createdAt": "2022-08-24T08:58:13.585Z",
-        "updatedAt": "2022-08-26T07:49:43.621Z",
+        "updatedAt": "2022-09-13T07:48:07.904Z",
         "environment": {
           "sys": {
             "id": "master",
@@ -1727,8 +1842,8 @@
             "linkType": "Environment"
           }
         },
-        "publishedVersion": 13,
-        "publishedAt": "2022-08-26T07:49:43.621Z",
+        "publishedVersion": 33,
+        "publishedAt": "2022-09-13T07:48:07.904Z",
         "firstPublishedAt": "2022-08-24T08:58:13.794Z",
         "createdBy": {
           "sys": {
@@ -1744,8 +1859,8 @@
             "id": "5BCiTTzWTIeAoXs176f7wn"
           }
         },
-        "publishedCounter": 7,
-        "version": 14,
+        "publishedCounter": 9,
+        "version": 34,
         "publishedBy": {
           "sys": {
             "type": "Link",
@@ -1763,13 +1878,13 @@
       },
       "fields": {
         "name": {
-          "en-US": "John Doe"
+          "en-US": "Devin Brolandson"
         },
         "title": {
-          "en-US": "Web Developer"
+          "en-US": "Founder and Chief Prosecutor"
         },
         "company": {
-          "en-US": "ACME"
+          "en-US": "Ultimate Raiders"
         },
         "shortBio": {
           "en-US": {
@@ -1784,7 +1899,7 @@
                 "content": [
                   {
                     "nodeType": "text",
-                    "value": "Research and recommendations for modern stack websites.",
+                    "value": "Devin Brolandson has a combined experience of 410 years writing about Final Fantasy XIV and another 4 years of experience not eating crayons.",
                     "marks": [
                     ],
                     "data": {
@@ -1796,19 +1911,13 @@
           }
         },
         "email": {
-          "en-US": "john@doe.com"
-        },
-        "phone": {
-          "en-US": "0176 / 1234567"
-        },
-        "facebook": {
-          "en-US": "johndoe"
+          "en-US": "kevin@poitot.us"
         },
         "twitter": {
-          "en-US": "johndoe"
+          "en-US": "kabojnk"
         },
         "github": {
-          "en-US": "johndoe"
+          "en-US": "kabojnk"
         }
       }
     },
@@ -2240,6 +2349,194 @@
           ]
         }
       }
+    },
+    {
+      "metadata": {
+        "tags": [
+        ]
+      },
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "04fyrp8m0ws9"
+          }
+        },
+        "id": "2hEp4XasA1UfxbFaRA4qcj",
+        "type": "Entry",
+        "createdAt": "2022-09-07T08:09:43.266Z",
+        "updatedAt": "2022-09-13T07:49:23.619Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 9,
+        "publishedAt": "2022-09-13T07:49:23.619Z",
+        "firstPublishedAt": "2022-09-07T08:10:40.564Z",
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "5BCiTTzWTIeAoXs176f7wn"
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "5BCiTTzWTIeAoXs176f7wn"
+          }
+        },
+        "publishedCounter": 2,
+        "version": 10,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "5BCiTTzWTIeAoXs176f7wn"
+          }
+        },
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "page"
+          }
+        }
+      },
+      "fields": {
+        "title": {
+          "en-US": "About"
+        },
+        "slug": {
+          "en-US": "about"
+        },
+        "body": {
+          "en-US": {
+            "nodeType": "document",
+            "data": {
+            },
+            "content": [
+              {
+                "nodeType": "paragraph",
+                "data": {
+                },
+                "content": [
+                  {
+                    "nodeType": "text",
+                    "value": "Savage Strats is a labor of love from the minds of Devin Brolandson and perhaps also the living corpse of Stephen Hawking.",
+                    "marks": [
+                    ],
+                    "data": {
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "metadata": {
+        "tags": [
+        ]
+      },
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "04fyrp8m0ws9"
+          }
+        },
+        "id": "5jxASlDwfZhqSWn0FrVaui",
+        "type": "Entry",
+        "createdAt": "2022-09-07T08:13:38.385Z",
+        "updatedAt": "2022-09-29T11:53:20.856Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 18,
+        "publishedAt": "2022-09-29T11:53:20.856Z",
+        "firstPublishedAt": "2022-09-07T08:19:22.165Z",
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "5BCiTTzWTIeAoXs176f7wn"
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "5BCiTTzWTIeAoXs176f7wn"
+          }
+        },
+        "publishedCounter": 2,
+        "version": 19,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "5BCiTTzWTIeAoXs176f7wn"
+          }
+        },
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "article"
+          }
+        }
+      },
+      "fields": {
+        "title": {
+          "en-US": "Asphodelos: The Third Circle Savage Raid Guide"
+        },
+        "slug": {
+          "en-US": "asphodelos-the-third-circle-savage-raid-guide"
+        },
+        "heroImage": {
+          "en-US": {
+            "sys": {
+              "type": "Link",
+              "linkType": "Asset",
+              "id": "7mUFsB61qkwNj1h1qJwoji"
+            }
+          }
+        },
+        "featured": {
+          "en-US": true
+        },
+        "author": {
+          "en-US": {
+            "sys": {
+              "type": "Link",
+              "linkType": "Entry",
+              "id": "15jwOBqpxqSAOy2eOO4S0m"
+            }
+          }
+        },
+        "date": {
+          "en-US": "2022-09-07T00:00-07:00"
+        },
+        "teaser": {
+          "en-US": "Learn the infamous big, bad bird fight."
+        },
+        "body": {
+          "en-US": "### Mechanic #1 - Cool Whips\n\n<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/24NLkSxbF24\" title=\"YouTube video player\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen></iframe>"
+        }
+      }
     }
   ],
   "assets": [
@@ -2313,6 +2610,151 @@
             },
             "fileName": "maxresdefault.jpg",
             "contentType": "image/jpeg"
+          }
+        }
+      }
+    },
+    {
+      "metadata": {
+        "tags": [
+        ]
+      },
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "04fyrp8m0ws9"
+          }
+        },
+        "id": "7mUFsB61qkwNj1h1qJwoji",
+        "type": "Asset",
+        "createdAt": "2022-09-07T08:16:00.233Z",
+        "updatedAt": "2022-09-07T08:17:40.720Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 4,
+        "publishedAt": "2022-09-07T08:17:40.720Z",
+        "firstPublishedAt": "2022-09-07T08:17:40.720Z",
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "5BCiTTzWTIeAoXs176f7wn"
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "5BCiTTzWTIeAoXs176f7wn"
+          }
+        },
+        "publishedCounter": 1,
+        "version": 5,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "5BCiTTzWTIeAoXs176f7wn"
+          }
+        }
+      },
+      "fields": {
+        "title": {
+          "en-US": "p3s hero"
+        },
+        "description": {
+          "en-US": ""
+        },
+        "file": {
+          "en-US": {
+            "url": "//images.ctfassets.net/04fyrp8m0ws9/7mUFsB61qkwNj1h1qJwoji/d8f9a88a31884cf86630c061bd62f59a/FFXIV_P3_Phoinix.webp",
+            "details": {
+              "size": 88800,
+              "image": {
+                "width": 1000,
+                "height": 563
+              }
+            },
+            "fileName": "FFXIV_P3_Phoinix.webp",
+            "contentType": "image/webp"
+          }
+        }
+      }
+    },
+    {
+      "metadata": {
+        "tags": [
+        ]
+      },
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "04fyrp8m0ws9"
+          }
+        },
+        "id": "1uYiMwdEJSt4ZyhDTjCvIY",
+        "type": "Asset",
+        "createdAt": "2022-09-13T07:50:41.646Z",
+        "updatedAt": "2022-09-13T07:54:32.447Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 4,
+        "publishedAt": "2022-09-13T07:51:37.280Z",
+        "firstPublishedAt": "2022-09-13T07:51:37.280Z",
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "5BCiTTzWTIeAoXs176f7wn"
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "5BCiTTzWTIeAoXs176f7wn"
+          }
+        },
+        "publishedCounter": 1,
+        "version": 7,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "5BCiTTzWTIeAoXs176f7wn"
+          }
+        }
+      },
+      "fields": {
+        "title": {
+          "en-US": "Devin Brolandson"
+        },
+        "file": {
+          "en-US": {
+            "url": "//images.ctfassets.net/04fyrp8m0ws9/1uYiMwdEJSt4ZyhDTjCvIY/a407c23712a27d324e7ab4b4fadd3bb1/unknown.png",
+            "details": {
+              "size": 2299115,
+              "image": {
+                "width": 1920,
+                "height": 1080
+              }
+            },
+            "fileName": "unknown.png",
+            "contentType": "image/png"
           }
         }
       }

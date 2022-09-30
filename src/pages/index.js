@@ -4,7 +4,6 @@ import get from 'lodash/get'
 
 import Layout from '../components/layout'
 import Hero from '../components/hero'
-import ArticlePreview from '../components/article-preview'
 import Featured from '../components/featured'
 
 class RootIndex extends React.Component {
@@ -39,11 +38,17 @@ export const pageQuery = graphql`
               slug
               updatedAt(formatString: "MMMM Do, YYYY")
               date(formatString: "MMMM Do, YYYY")
-              teaser {
-                  raw
+              body {
+                  childMarkdownRemark {
+                      html
+                      excerpt
+                  }
               }
-              content {
-                  raw
+              teaser {
+                  childMarkdownRemark {
+                      html
+                      excerpt
+                  }
               }
               author {
                   twitter

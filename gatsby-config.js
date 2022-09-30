@@ -44,6 +44,7 @@ module.exports = {
     "gatsby-plugin-react-helmet",
     "gatsby-plugin-sharp",
     "gatsby-plugin-image",
+    "gatsby-transformer-remark",
     {
       resolve: "gatsby-source-contentful",
       options: contentfulConfig,
@@ -55,6 +56,6 @@ module.exports = {
           include: /assets/
         }
       }
-    }
+    },
   ],
 };
